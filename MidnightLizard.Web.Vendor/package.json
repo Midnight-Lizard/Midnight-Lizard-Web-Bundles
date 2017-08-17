@@ -6,7 +6,7 @@
     "name": "Pavel Agarkov",
     "email": "Pavel.Agarkov@gmail.com"
   },
-  "repository": "https://github.com/pavel-agarkov/Midnight-Lizard-Vendor-Bundle.git",
+  "repository": "https://github.com/pavel-agarkov/Midnight-Lizard-Web-Bundles.git",
   "license": "MIT",
   "files": [ "themes", "webpack.config.js" ],
   "scripts": { "install": "webpack" },
