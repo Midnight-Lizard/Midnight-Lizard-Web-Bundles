@@ -1,7 +1,7 @@
 {
   "name": "midnight-lizard-vendor",
-  "version": "1.0.4",
-  "description": "MidnightLizard.Vendor",
+  "version": "1.0.5",
+  "description": "Vendor JavaScript bundle for all Midnight Lizard web components",
   "author": {
     "name": "Pavel Agarkov",
     "email": "Pavel.Agarkov@gmail.com"
