@@ -4,6 +4,7 @@
     "moduleResolution": "node",
     "target": "es5",
     "sourceMap": true,
+    "removeComments": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "skipDefaultLibCheck": true,

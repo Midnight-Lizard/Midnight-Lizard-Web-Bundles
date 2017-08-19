@@ -8,6 +8,7 @@ module.exports = (env) =>
     const extractCSS = new ExtractTextPlugin('vendor.css');
     const isDevBuild = !(env && env.prod) && (process.env.NODE_ENV !== 'production');
     const version = process.env.npm_package_version.replace(/\./g, '_');
+    console.warn(`Vendor installed in ${isDevBuild ? 'dev' : 'prod'} mode`);
     const sharedConfig = {
         stats: { modules: false },
         resolve: { extensions: ['.js'] },
@@ -35,7 +36,9 @@ module.exports = (env) =>
                 'es6-promise',
                 'event-source-polyfill',
                 'jquery',
-                'zone.js'
+                'zone.js',
+                'rxjs',
+                'reflect-metadata'
             ]
         },
         output: {
@@ -45,8 +48,8 @@ module.exports = (env) =>
         },
         plugins: [
             new webpack.ProvidePlugin({ $: 'jquery', jQuery: 'jquery' }), // Maps these identifiers to the jQuery package (because Bootstrap expects it to be a global variable)
-            new webpack.ContextReplacementPlugin(/\@angular\b.*\b(bundles|linker)/, __dirname), // Workaround for https://github.com/angular/angular/issues/11580
-            new webpack.ContextReplacementPlugin(/angular(\\|\/)core(\\|\/)@angular/, __dirname), // Workaround for https://github.com/angular/angular/issues/14898
+            new webpack.ContextReplacementPlugin(/\@angular\b.*\b(bundles|linker)/, path.join(__dirname, '../../ClientApp')), // Workaround for https://github.com/angular/angular/issues/11580
+            new webpack.ContextReplacementPlugin(/angular(\\|\/)core(\\|\/)@angular/, path.join(__dirname, '../../ClientApp')), // Workaround for https://github.com/angular/angular/issues/14898
             new webpack.IgnorePlugin(/^vertx$/) // Workaround for https://github.com/stefanpenner/es6-promise/issues/100
         ]
     };
@@ -72,11 +75,12 @@ module.exports = (env) =>
         plugins: [
             extractCSS,
             new webpack.DllPlugin({
+                context: path.join(__dirname, '../../'),
                 path: path.join(__dirname, '../../', 'wwwroot', 'dist', '[name]-manifest.json'),
                 name: '[name]_' + version
             })
         ].concat(isDevBuild ? [] : [
-            new webpack.optimize.UglifyJsPlugin()
+            new webpack.optimize.UglifyJsPlugin({ comments: false, output: { comments: false } })
         ])
     });
 
