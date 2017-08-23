@@ -43,7 +43,7 @@
     <Content Include="tsconfig.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="scripts\install.js">
+    <Compile Include="scripts\build.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="webpack.config.js" />

@@ -1,6 +1,6 @@
 {
   "name": "midnight-lizard-vendor",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Vendor JavaScript bundle for all Midnight Lizard web components",
   "author": {
     "name": "Pavel Agarkov",
@@ -9,7 +9,7 @@
   "repository": "https://github.com/pavel-agarkov/Midnight-Lizard-Web-Bundles.git",
   "license": "MIT",
   "files": [ "scripts", "themes", "webpack.config.js" ],
-  "scripts": { "install": "node scripts/install.js" },
+  "scripts": { "postinstall": "node scripts/build.js" },
   "dependencies": {
     "@angular/animations": "4.2.5",
     "@angular/cdk": "^2.0.0-beta.8",
