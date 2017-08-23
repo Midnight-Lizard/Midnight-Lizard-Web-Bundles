@@ -97,6 +97,7 @@ module.exports = (env) =>
         },
         plugins: [
             new webpack.DllPlugin({
+                context: path.join(__dirname, '../../'),
                 path: path.join(__dirname, '../../', 'ClientApp', 'dist', '[name]-manifest.json'),
                 name: '[name]_' + version
             })
