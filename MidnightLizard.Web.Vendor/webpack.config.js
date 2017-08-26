@@ -21,25 +21,22 @@ module.exports = (env) =>
             vendor: [
                 '@angular/animations',
                 '@angular/material',
-                '@angular/flex-layout',
                 '@angular/cdk',
                 '@angular/common',
-                '@angular/compiler',
                 '@angular/core',
                 '@angular/forms',
                 '@angular/http',
-                '@angular/platform-browser',
-                '@angular/platform-browser-dynamic',
-                '@angular/platform-server',
                 '@angular/router',
                 'es6-shim',
                 'es6-promise',
                 'event-source-polyfill',
-                'jquery',
                 'zone.js',
                 'rxjs',
+                '@ngrx/core',
+                '@ngrx/effects',
+                '@ngrx/store',
                 'reflect-metadata'
-            ]
+            ].concat(isDevBuild ? ['@angular/compiler'] : [])
         },
         output: {
             publicPath: '/dist/',
@@ -58,6 +55,10 @@ module.exports = (env) =>
         entry: {
             vendor: [
                 'hammerjs',
+                'jquery',
+                '@angular/platform-browser',
+                '@angular/platform-browser-dynamic',
+                '@angular/flex-layout',
                 'material-design-icons-iconfont/dist/material-design-icons.css',
                 './themes/core-theme.scss'
             ]
@@ -86,7 +87,12 @@ module.exports = (env) =>
 
     const serverBundleConfig = merge(sharedConfig, {
         target: 'node',
-        entry: { vendor: ['aspnet-prerendering'] },
+        entry: {
+            vendor: [
+                '@angular/platform-server',
+                'aspnet-prerendering'
+            ]
+        },
         resolve: { mainFields: ['main'] },
         output: {
             path: path.join(__dirname, '../../', 'ClientApp', 'dist'),
