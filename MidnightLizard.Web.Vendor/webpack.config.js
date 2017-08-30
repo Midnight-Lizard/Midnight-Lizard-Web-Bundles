@@ -35,6 +35,7 @@ module.exports = (env) =>
                 '@ngrx/core',
                 '@ngrx/effects',
                 '@ngrx/store',
+                '@ngrx/router-store',
                 'reflect-metadata'
             ].concat(isDevBuild ? ['@angular/compiler'] : [])
         },
