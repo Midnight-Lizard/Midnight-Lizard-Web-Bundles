@@ -36,8 +36,7 @@ module.exports = (env) =>
                 '@ngrx/effects',
                 '@ngrx/store',
                 '@ngrx/router-store',
-                'reflect-metadata',
-                './themes/core-theme.scss'
+                'reflect-metadata'
             ].concat(isDevBuild ? ['@angular/compiler'] : [])
         },
         output: {
@@ -61,7 +60,8 @@ module.exports = (env) =>
                 '@angular/platform-browser',
                 '@angular/platform-browser-dynamic',
                 '@angular/flex-layout',
-                'material-design-icons-iconfont/dist/material-design-icons.css'
+                'material-design-icons-iconfont/dist/material-design-icons.css',
+                './themes/core-theme.scss'
             ]
         },
         output: { path: path.join(__dirname, '../../', 'wwwroot', 'dist') },
