@@ -1,6 +1,6 @@
 {
   "name": "midnight-lizard-vendor",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "Vendor JavaScript bundle for all Midnight Lizard web components",
   "author": {
     "name": "Pavel Agarkov",
