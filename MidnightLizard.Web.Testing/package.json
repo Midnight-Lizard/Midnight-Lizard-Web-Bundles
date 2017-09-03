@@ -1,6 +1,6 @@
 {
   "name": "midnight-lizard-testing",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Testing npm packages bundle for all Midnight Lizard web components",
   "author": {
     "name": "Pavel Agarkov",
