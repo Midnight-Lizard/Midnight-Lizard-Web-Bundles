@@ -21,6 +21,7 @@ module.exports = (env) =>
             vendor: [
                 '@angular/animations',
                 '@angular/material',
+                '@angular/flex-layout',
                 '@angular/cdk',
                 '@angular/common',
                 '@angular/core',
@@ -59,7 +60,6 @@ module.exports = (env) =>
                 'jquery',
                 '@angular/platform-browser',
                 '@angular/platform-browser-dynamic',
-                '@angular/flex-layout',
                 'material-design-icons-iconfont/dist/material-design-icons.css',
                 './themes/core-theme.scss'
             ]
