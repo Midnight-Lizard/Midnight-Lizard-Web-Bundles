@@ -60,6 +60,7 @@ module.exports = (env) =>
                 'jquery',
                 '@angular/platform-browser',
                 '@angular/platform-browser-dynamic',
+                '@angular/platform-browser/animations',
                 'material-design-icons-iconfont/dist/material-design-icons.css',
                 './themes/core-theme.scss'
             ]
