@@ -1,6 +1,6 @@
 {
   "name": "midnight-lizard-testing",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Testing npm packages bundle for all Midnight Lizard web components",
   "author": {
     "name": "Pavel Agarkov",
@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/chai": "4.0.1",
-    "@types/jasmine": "2.5.53",
+    "@types/jasmine": "2.5.54",
     "@ngrx/store-devtools": "4.0.0",
     "chai": "^4.1.0",
     "jasmine-core": "^2.8.0",
