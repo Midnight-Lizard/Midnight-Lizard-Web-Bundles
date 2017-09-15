@@ -8,10 +8,7 @@
   },
   "repository": "https://github.com/pavel-agarkov/Midnight-Lizard-Web-Bundles.git",
   "license": "MIT",
-  "files": [
-    "themes",
-    "webpack.config.js"
-  ],
+  "files": [ "themes", "webpack.config.js" ],
   "scripts": {
     "prod-build": "webpack -p --env.prod --optimize-minimize",
     "dev-build": "webpack"

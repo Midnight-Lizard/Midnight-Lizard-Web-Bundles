@@ -8,7 +8,7 @@ module.exports = (env) =>
     const extractCSS = new ExtractTextPlugin('vendor.css');
     const isDevBuild = !(env && env.prod) && (process.env.NODE_ENV !== 'production');
     const version = process.env.npm_package_version.replace(/\./g, '_');
-    console.warn(`Vendor installed in ${isDevBuild ? 'dev' : 'prod'} mode`);
+    console.warn(`Vendor will be build in ${isDevBuild ? 'dev' : 'prod'} mode`);
     const sharedConfig = {
         stats: { modules: false },
         resolve: { extensions: ['.js'] },
